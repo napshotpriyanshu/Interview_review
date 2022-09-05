@@ -1,0 +1,110 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Review Meet</title>
+        <link rel ="icon" href="image/favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+
+        <div id="nav">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#" ><img class ="logo-1"src="image/logo.png"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+    
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <ul class="nav justify-content-end nav-pills">
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <button id="open" class="nav-link">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Review</a>
+                        </li>
+                        
+                      </ul>
+                      
+                  </div>
+                </div>
+                </div>
+            </nav>
+            </div>
+
+            <div class="modals-container" id="modals_container">
+                <div class="modals">
+                    <div class="card">
+                        <div class="card-header">
+                        <h3 id="profile">PROFILE</h3>
+                        </div>
+                        <div class="card-body">
+                          <img src="https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png"  style="width: 50%; height: 50%" class="rounded-circle">
+                          <h5 class="card-title pt-4">Candidate Name:</h5>
+                          <p class="card-text">Email ID: </p>
+                          <p class="card-text">Phone no: </p> 
+                        </div>
+                      </div>
+                    <button type="button" class="btn btn-outline-danger" id="close">Close Me</button>
+                </div>
+            </div>
+            <div style="text-align: center;">
+            <div class="card-header" >
+                <h2 >RESULT</h2>
+            </div>
+
+                
+                    <div id="result" style="display: flex;">
+                    </div>
+
+            </div>
+            <script type="text/javascript">
+                var interview = (localStorage.getItem('questions'));
+                interview = JSON.parse(interview);
+               
+                for(var i = 0; i < 5; i++)
+                {
+                    var row = document.createElement("div");
+                    row.id = "row" + i;
+                    document.getElementById("result").appendChild(row);
+                    
+                    
+        
+                    var question = document.createElement("div");
+                    document.getElementById("row" + i).appendChild(question);
+                    document.getElementById("row" + i).classList.add("spacing");
+                    question.id = "question";
+                    question.innerHTML = interview[i].question;
+        
+                    var rating = document.createElement("div");
+                    document.getElementById("row" + i).appendChild(rating);
+                    rating.id = "rating";
+                    rating.innerHTML = "Rating: " + interview[i].rating + "/5";
+        
+                    var comment = document.createElement("div");
+                    document.getElementById("row" + i).appendChild(comment);
+                    comment.id = "comment";
+                    comment.innerHTML = "Comment:" + interview[i].comment;
+
+                }
+                
+            </script>
+    
+    
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="btn.js"></script>
+    </body>
+    
+</html>

@@ -48,13 +48,13 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                  Question:
+                  <p id="question">Question: </p>
                 </div>
                 <div class="card-body">
                   
-                  <p id="question" class="card-text">question present here</p>
-                  <button type="button" class="btn btn-outline-dark ">PREV</button>
-                  <button type="button" class="btn btn-outline-dark">NEXT</button>
+                  <p class="card-text">question present here</p>
+                  <button type="button" class="btn btn-outline-dark" id="prev" onclick="showPrevQuestion()">PREV</button>
+                  <button type="button" class="btn btn-outline-dark" id="next" onclick="showNextQuestion()" >NEXT</button>
                   
                 </div>
               </div>
@@ -87,11 +87,11 @@
 
               <h3>Rating:</h3>
             <div class="btn-group-horizontal pt-4">
-                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="1" id="ratingBtn1">1</button>
-                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="2" id="ratingBtn2">2</button>
-                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="3" id="ratingBtn3">3</button>
-                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="4" id="ratingBtn4">4</button>
-                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="5" id="ratingBtn5">5</button>
+                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="1" onclick="addRating(1)" id="ratingBtn1">1</button>
+                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="2" onclick="addRating(2)" id="ratingBtn2">2</button>
+                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="3" onclick="addRating(3)" id="ratingBtn3">3</button>
+                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="4" onclick="addRating(4)" id="ratingBtn4">4</button>
+                <button type="button" class="fa fa-star m-2 p-2" style="font-size: 20px;" value="5" onclick="addRating(5)" id="ratingBtn5">5</button>
               </div>
 
         </div>
@@ -103,13 +103,14 @@
             </div>
             
             <div >
-              <button type="button" class="btn btn-success " id="save">Save</button>
+              <button type="button" class="btn btn-success " id="save" onclick="saveResponse()">Save</button>
             </div>
         </div>
 
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="btn.js"></script>
         <script src="index.js"></script>
     </body>
     

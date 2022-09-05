@@ -32,3 +32,10 @@ div {
     width: 600px;
     text-align: center;
 }
+
+.spacing{
+    margin: 4px;
+    background-color: antiquewhite;
+    border-style: double;
+    padding: 20px;
+}
